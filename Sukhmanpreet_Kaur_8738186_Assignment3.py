@@ -136,15 +136,50 @@ class LargestValue:
         return maximumNumber
 
     def getUserInputs(self):
-        first = float(input("Enter first number: "))
-        second = float(input("Enter second number: "))
-        third = float(input("Enter third number: "))
+        first = int(input("Enter first number: "))
+        second = int(input("Enter second number: "))
+        third = int(input("Enter third number: "))
         return (first, second, third)
 
     def run(self):
         first, second, third = self.getUserInputs()
         maximumNumber = self.maxValue(first, second, third)
         print(f"Maximum of {first},{second},{third} is => {maximumNumber}")
+
+
+class BankSystem:
+    balance = 0
+
+    def __init__(self):
+        amount = float(input("Enter initial deposit amount: "))
+        self.balance = amount
+        self.displayBalance()
+        self.runUserTasks()
+
+    def runUserTasks(self):
+        operation = input("Enter operation to perform:(deposit/withdraw) ")
+        if(operation == "deposit"):
+            self.deposit()
+        elif(operation == "withdraw"):
+            self.withdraw()
+        else:
+            print("Invalid operation")
+        self.displayBalance()
+
+    def deposit(self):
+        amount = float(input("Enter amount to be deposited: $ "))
+        self.balance += amount
+
+    def withdraw(self):
+        amount = float(input("Enter amount to be withdrawn: $"))
+        if(self.balance >= amount):
+            self.balance -= amount
+            print("You withdrew $%.2f from the account" % amount)
+        else:
+            print("Insufficient funds")
+
+    def displayBalance(self):
+        print("Available balance: $%.2f" % self.balance)
 
 
 if __name__ == '__main__':
@@ -160,3 +195,5 @@ if __name__ == '__main__':
     largestValueFinder = LargestValue()
     largestValueFinder.run()
    
+    # Bank system
+    bankSystem = BankSystem()
