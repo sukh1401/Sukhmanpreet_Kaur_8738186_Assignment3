@@ -124,6 +124,28 @@ class Factorial:
 
 
 
+class LargestValue:
+    def maxValue(self, first, second, third):
+        maximumNumber = 0
+        if(first >= second and first >= third):
+            maximumNumber = first
+        if (second >= first and second >= third):
+            maximumNumber = second
+        if (third >= first and third >= second):
+            maximumNumber = third
+        return maximumNumber
+
+    def getUserInputs(self):
+        first = float(input("Enter first number: "))
+        second = float(input("Enter second number: "))
+        third = float(input("Enter third number: "))
+        return (first, second, third)
+
+    def run(self):
+        first, second, third = self.getUserInputs()
+        maximumNumber = self.maxValue(first, second, third)
+        print(f"Maximum of {first},{second},{third} is => {maximumNumber}")
+
 
 if __name__ == '__main__':
     # Order System
@@ -134,4 +156,7 @@ if __name__ == '__main__':
     factorialCalculator = Factorial()
     factorialCalculator.run()
 
+    # Maximum of three finder
+    largestValueFinder = LargestValue()
+    largestValueFinder.run()
    
