@@ -184,16 +184,24 @@ class BankSystem:
 
 if __name__ == '__main__':
     # Order System
+    print("Order System")
     orderSystem = OrderSystem()
     orderSystem.run()
+    print("========================================")
 
     # Factorial Program
+    print("Factorial Program")
     factorialCalculator = Factorial()
     factorialCalculator.run()
+    print("========================================")
+    
 
     # Maximum of three finder
+    print("Maximum of three finder")
     largestValueFinder = LargestValue()
     largestValueFinder.run()
-   
+    print("========================================")
+
     # Bank system
+    print("Bank system")
     bankSystem = BankSystem()
